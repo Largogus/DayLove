@@ -209,12 +209,12 @@ body, html {
     
     #head2 {
         padding: 2vw 3vw;
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .button-div {
         display: flex;
-        height: 100vw;
+        height: 25vh;
         width: 90vw;
         left: 6.5%;
     }

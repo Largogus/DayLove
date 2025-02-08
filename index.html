@@ -10,7 +10,7 @@
 
     <div class="main">
         <div class="content">
-            <div id="head1"><p>ПОДЕЛИСЬ<br>ЛЮБОВЬЮ</p></div>
+            <div id="head1"><p>ПОДЕЛИСЬ<br>ЛЮБОВЬЮ</hrefp></div>
             <div style="background-color: black; padding: 4%;"></div>
             <div id="head2"><p>
                 Нажми на сердечко, напиши приятные слова и выбери оформление! Вырази свою любовь окружающим или к конкретному человеку♥
@@ -23,5 +23,38 @@
             </button>
         </div>
     </div>
+
+    <dialog id="choice_dlg">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: center; padding: 2%;">
+                <canvas class="valentinka">
+
+                </canvas>
+            </div>
+            <div style="display: flex; justify-content: center; padding: 1%;">
+                <div id="main_button">
+                    <p class="p_choice">Цвет</p>
+
+                    <button class="btn-choice"><div class="circle_btn1"></div></button>
+                    <button class="btn-choice"><div class="circle_btn2"></div></button>
+                    <button class="btn-choice"><div class="circle_btn3"></div></button>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 10%; padding: 1%">
+                <button class="move2" disabled></button>
+                <button class="move1"></button>
+            </div>
+
+            <!-- <div>
+                <button class="btn-choice-select"></button>
+                <button class="btn-choice-select"></button>
+                <button class="btn-choice-select"></button>
+            </div> -->
+        </div>
+        <div id="blacks"></div>
+    </dialog>
+
+    <script src="index.js"></script>
+
 </body>
 </html>

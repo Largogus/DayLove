@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import 'color.css';
 
 body, html {
     margin: 0;
@@ -81,6 +82,85 @@ body, html {
     background-image: url('image/button_click.png'); 
 }
 
+#choice_dlg {
+    border: none;
+    width: 80%;
+    padding: 0px;
+}
+
+#blacks {
+    background-color: black;
+    width: 100%;
+    height: 1.5vw;
+}
+
+.valentinka {
+    border-radius: 12px;
+    border: 4px solid black;
+    width: 80%;
+    justify-content: center;
+    background-color: var(--color1);
+}
+
+.btn-choice {
+    border: none;
+    background-color: transparent;
+    width: 15%;
+}
+
+.p_choice {
+    font-size: 2em;
+}
+
+#main_button {
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+    border: 4px solid black;
+    width: 80%;
+    gap: 8%;
+}
+
+.circle_btn1 {
+    justify-content: center;
+    background-color: var(--color1);
+    clip-path: circle(50%);
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.circle_btn2 {
+    background-color: var(--color2);
+    clip-path: circle(50%);
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.circle_btn3 {
+    background-color: var(--color3);
+    clip-path: circle(50%);
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.move1, .move2 {
+    background-color: transparent;
+    border: none;
+}
+
+.move1::after {
+    content: var(--buttonRight);
+    font-size: 2em;
+}
+
+.move2::after {
+    content: var(--buttonLeft);
+    font-size: 2em;
+}
+
 @media (min-width: 1921px) {
     .content {
         margin: 12vh 20vh;
@@ -136,8 +216,7 @@ body, html {
         position: relative;
         right: 6%;
         width: 60vw;
-    }
-    
+    } 
 }
 
 @media (min-width: 533px) and (max-width: 768px) {
@@ -161,6 +240,31 @@ body, html {
         position: relative;
         right: 3%;
         width: 60vw;
+    }
+
+    .circle_btn1 {
+        justify-content: center;
+        background-color: var(--color1);
+        clip-path: circle(50%);
+        width: 40px;
+        height: 40px;
+        margin: auto;
+    }
+    
+    .circle_btn2 {
+        background-color: var(--color2);
+        clip-path: circle(50%);
+        width: 40px;
+        height: 40px;
+        margin: auto;
+    }
+    
+    .circle_btn3 {
+        background-color: var(--color3);
+        clip-path: circle(50%);
+        width: 40px;
+        height: 40px;
+        margin: auto;
     }
 }
 
@@ -190,6 +294,35 @@ body, html {
         width: 80vw;
         left: 10%;
     }
+
+    .circle_btn1 {
+        justify-content: center;
+        background-color: var(--color1);
+        clip-path: circle(50%);
+        width: 25px;
+        height: 25px;
+        margin: auto;
+    }
+    
+    .circle_btn2 {
+        background-color: var(--color2);
+        clip-path: circle(50%);
+        width: 25px;
+        height: 25px;
+        margin: auto;
+    }
+    
+    .circle_btn3 {
+        background-color: var(--color3);
+        clip-path: circle(50%);
+        width: 25px;
+        height: 25px;
+        margin: auto;
+    }
+
+    .p_choice {
+        font-size: 1em;
+    }
 }
 
 @media (min-width: 0px) and (max-width: 425px) {
@@ -217,5 +350,34 @@ body, html {
         height: 25vh;
         width: 90vw;
         left: 6.5%;
+    }
+
+    .circle_btn1 {
+        justify-content: center;
+        background-color: var(--color1);
+        clip-path: circle(50%);
+        width: 15px;
+        height: 15px;
+        margin: auto;
+    }
+    
+    .circle_btn2 {
+        background-color: var(--color2);
+        clip-path: circle(50%);
+        width: 15px;
+        height: 15px;
+        margin: auto;
+    }
+    
+    .circle_btn3 {
+        background-color: var(--color3);
+        clip-path: circle(50%);
+        width: 15px;
+        height: 15px;
+        margin: auto;
+    }
+
+    .p_choice {
+        font-size: 1em;
     }
 }

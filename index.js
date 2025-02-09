@@ -1,3 +1,10 @@
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('loads').style.display = 'none'; // Скрываем прелоадер
+        document.getElementById('contents').style.display = 'block';
+    }, 300)
+}
+
 const button_ok = document.querySelector('.button');
 const dlg = document.getElementById('choice_dlg');
 

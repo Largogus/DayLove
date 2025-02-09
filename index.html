@@ -27,34 +27,23 @@
     <dialog id="choice_dlg">
         <div style="display: flex; flex-direction: column;">
             <div style="display: flex; justify-content: center; padding: 2%;">
-                <canvas class="valentinka">
-
-                </canvas>
+                <canvas class="valentinka"></canvas>
             </div>
-            <div style="display: flex; justify-content: center; padding: 1%;">
-                <div id="main_button">
-                    <p class="p_choice">Цвет</p>
-
-                    <button class="btn-choice"><div class="circle_btn1"></div></button>
-                    <button class="btn-choice"><div class="circle_btn2"></div></button>
-                    <button class="btn-choice"><div class="circle_btn3"></div></button>
+            <div id="pages_div" style="display: flex; justify-content: center; padding: 1%;">
+                <div id="main_button" page="0">
+                    <input id="textInput" class="p_choice" placeholder="Напишите тут Ваши пожелния" style="width: 90%; text-align: center; border: none;" value="С днём Святого Валентина! От: Меня. Кому: Тебе">
                 </div>
             </div>
             <div style="display: flex; justify-content: center; gap: 10%; padding: 1%">
-                <button class="move2" disabled></button>
-                <button class="move1"></button>
+                <button id="button-left" class="move2" disabled></button>
+                <button id="button-right" class="move1"></button>
             </div>
-
-            <!-- <div>
-                <button class="btn-choice-select"></button>
-                <button class="btn-choice-select"></button>
-                <button class="btn-choice-select"></button>
-            </div> -->
         </div>
         <div id="blacks"></div>
     </dialog>
 
-    <script src="index.js"></script>
+    <script src="index.js">
+    </script>
 
 </body>
 </html>

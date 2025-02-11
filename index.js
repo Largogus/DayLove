@@ -8,9 +8,14 @@ window.onload = function() {
 const button_ok = document.querySelector('.button');
 const dlg = document.getElementById('choice_dlg');
 
-heart_src = 'image/pattern/heart.png';
-block_src = 'image/pattern/block.png';
-star_src = 'image/pattern/star.png';
+let heart_src = 'image/pattern/heart.png';
+let block_src = 'image/pattern/block.png';
+let star_src = 'image/pattern/star.png';
+
+let comaru_src = 'image/picture/comaru.png';
+let kisi_src = 'image/picture/kisi.png';
+let miku_src = 'image/picture/miku.png';
+
 
 let text = 'С днём Святого Валентина! От: Меня. Кому: Тебе'
 
@@ -20,6 +25,10 @@ let image = new Image();
 image.crossOrigin = 'Anonymous';
 image.src = 'image/pattern/heart.png';
 
+let picture = new Image();
+picture.crossOrigin = 'Anonymous';
+picture.src = miku_src;
+
 button_ok.addEventListener("click", function () {
     dlg.showModal();
     drawCanvas();
@@ -28,11 +37,14 @@ button_ok.addEventListener("click", function () {
 function drawCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = backgroundColor;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.imageSmoothingEnabled = true;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(image, 170, 10, 130, 130);
+    ctx.drawImage(image, 1020, 30, 900, 900);
+    ctx.drawImage(picture, 0, 180, 900, 900)
     console.log(text);
 
-    ctx.font = '10px Dela Gothic One';
+    ctx.font = '70px Dela Gothic One';
     ctx.fillStyle = 'white'; 
     ctx.textAlign = 'center';
     
@@ -56,13 +68,12 @@ function drawCanvas() {
     }
 
     lines.forEach((line, index) => {
-        const y = 30 + index * 20;
+        const y = 120 + index * 120;
         ctx.fillStyle = 'black';
-        ctx.fillRect(115, y, 175, 1); 
-        ctx.fillText(line, 205, y - 2);
+        ctx.fillRect(650, y, 1200, 10); 
+        ctx.fillText(line, 1250, y - 12);
     });
 };
-
 
 const canvas = document.querySelector('.valentinka');
 const ctx = canvas.getContext('2d');
@@ -113,14 +124,15 @@ button_right.addEventListener('click', function() {
         selectPattern();
     } else if (pageValue === 3) {
         const code = `
-        <p class="p_choice">Цвет</p>
+        <p id="kart" class="p_choice">Фото</p>
 
-        <button class="btn-choice"><div class="test1"></div></button>
-        <button class="btn-choice"><div class="test1"></div></button>
-        <button class="btn-choice"><div class="test1"></div></button>
+        <button class="btn-choice" id="picture_1"></button>
+        <button class="btn-choice" id="picture_2"></button>
+        <button class="btn-choice" id="picture_3"></button>
         `;
 
         pages_div.innerHTML = code;
+        selectPicture()
     } else if (pageValue === 4) {
         button_right.disabled = true;
 
@@ -175,17 +187,19 @@ button_left.addEventListener('click', function() {
         pages_div.innerHTML = code;
         selectPattern();
     } else if (pageValue === 3) {
+        button_right.disabled = false;
         const code = `
-        <p class="p_choice">Цвет</p>
+        <p id="kart" class="p_choice">Фото</p>
 
-        <button class="btn-choice"><div class="test1"></div></button>
-        <button class="btn-choice"><div class="test1"></div></button>
-        <button class="btn-choice"><div class="test1"></div></button>
+        <button class="btn-choice" id="picture_1"></button>
+        <button class="btn-choice" id="picture_2"></button>
+        <button class="btn-choice" id="picture_3"></button>
         `;
 
         pages_div.innerHTML = code;
+        selectPicture()
     } else if (pageValue === 4) {
-        button_left.disabled = false;
+С
 
         const code = `
         <button class="btn-save">Сохранить</button>
@@ -256,25 +270,45 @@ function selectPattern() {
     }
 }
 
+function selectPicture() {
+    const picture1 = document.getElementById('picture_1');
+    const picture2 = document.getElementById('picture_2');
+    const picture3 = document.getElementById('picture_3');
+
+    if (picture1) {
+        picture1.addEventListener('click', function() {
+            picture.src = miku_src
+            picture.onload = function() {
+                drawCanvas();
+            };
+        })
+    }
+
+    if (picture2) {
+        picture2.addEventListener('click', function() {
+            picture.src = kisi_src;
+            picture.onload = function() {
+                drawCanvas();
+            };
+        })
+    }
+
+    if (picture3) {
+        picture3.addEventListener('click', function() {
+            picture.src = comaru_src
+            picture.onload = function() {
+                drawCanvas();
+            };
+        })
+    }
+}
+
 function saveBtn() {
     btn = document.querySelector('.btn-save')
     
     if (btn) {
         btn.addEventListener('click', function() {
-            const newWidth = 1920;  
-            const newHeight = 1080; 
-
-            const newCanvas = document.createElement('canvas');
-            newCanvas.width = newWidth;
-            newCanvas.height = newHeight;
-            const newCtx = newCanvas.getContext('2d');
-
-            const scaleFactorX = newWidth / canvas.width;
-            const scaleFactorY = newHeight / canvas.height;
-
-            newCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, newWidth, newHeight);
-
-            const imageData = newCanvas.toDataURL('image/png');
+            const imageData = canvas.toDataURL('image/png');
 
             const link = document.createElement('a');
             link.href = imageData;

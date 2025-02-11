@@ -178,6 +178,36 @@ body, html {
     padding: 10px;
 }
 
+#picture_1 {
+    background-image: url('image/miku_ico.png');
+    object-fit: cover;
+    background-size: 35%;
+    background-position: center;
+    background-repeat: no-repeat; 
+    max-width: 100%;
+    padding: 10px;
+}
+
+#picture_2 {
+    background-image: url('image/kisi_ico.png');
+    object-fit: cover;
+    background-size: 25%;
+    background-position: center;
+    background-repeat: no-repeat; 
+    max-width: 100%;
+    padding: 10px;
+}
+
+#picture_3 {
+    background-image: url('image/komaru_ico.png');
+    object-fit: cover;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat; 
+    max-width: 100%;
+    padding: 10px;
+}
+
 .p_choice {
     font-size: 2em;
     outline: none;
